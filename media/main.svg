@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" id="Layer_1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1024px" height="500px" viewBox="0 0 1024 500" enable-background="new 0 0 1024 500" xml:space="preserve">
+    <style type="text/css">
+        text {
+            font-family: Arial;
+            font-size: 80px;
+            fill: #000000;
+            text-anchor: middle;
+        }
+        rect {
+            fill: #efe;
+            stroke: #aaa;
+            stroke-width: 3;
+        }
+        .subtitle {
+            font-size: 40px;
+        }
+    </style>
+    <g id="Layer_0">
+        <rect x="0" y="0" width="1024" height="500" />
+        <text x="512" y="220">Android Basic Example</text>
+        <text x="512" y="300" class="subtitle">The minimal Android Studio skeleton</text>
+    </g>
+</svg>
