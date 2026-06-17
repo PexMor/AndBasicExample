@@ -43,6 +43,17 @@ The app must exist on Play Console (at least a draft) before the first upload. C
 
 The script checks that `keystore.properties` and `service-account.json` are present, then runs `./gradlew publishReleaseBundle` which builds a signed AAB and uploads it via the Google Play Developer API.
 
+> **Note:** `publishReleaseBundle` uploads the bundle and creates a **draft release** — it does not make the app live. After a successful upload you must manually promote the release in Play Console:
+>
+> 1. Open [Play Console](https://play.google.com/console) → your app → the target track (e.g. **Production**).
+> 2. Click **Review release**.
+> 3. Resolve any warnings or policy issues.
+> 4. Click **Start rollout to Production** (or the equivalent for the chosen track).
+>
+> Google then reviews the release before it becomes visible to users (typically fast for updates, up to a few days for new apps or significant changes).
+>
+> **Tip:** To skip the manual promotion step you can set `userFraction` in the `play {}` block in `app/build.gradle.kts` (e.g. `userFraction.set(1.0)` for 100 % rollout) combined with `releaseStatus.set(ReleaseStatus.IN_PROGRESS)`. The plugin will then submit the release for rollout automatically on upload. Omitting these settings (the default) keeps the safer draft behaviour.
+
 To build the signed AAB locally without uploading:
 
 ```bash
